@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+header {
+    background-color: #28a745;
+    color: white;
+    /*Espaçamento interno 15px na horizontal, 0 na vertical*/
+    padding: 15px 0;
+    font-size: 24px;
+    border: 3px solid black;
+}
+
+nav {
+    background-color: #007bff;
+    padding: 10px;
+    /*Flex Boxing*/
+    display: flex;
+    /*Alinhamento horizontal*/
+    justify-content: space-between;
+    /*Alinhamento vertical*/
+    align-items: center;
+}
+
+/*Referênciando um id com #*/
+#links-menu {
+    display: flex;
+    gap: 20px;
+}
+
+/*Configura o estilo das âncoras que estão dentro do nav*/
+nav a {
+    /*texto branco*/
+    color: white;
+    /*não faz decoração no link*/
+    text-decoration: none;
+    /*10px vertical e 15px horizontal*/
+    padding: 10px 15px;
+    /*Tamanho da fonte*/
+    font-size: 18px;
+    /*cor de fundo*/
+    background-color: #005663;
+    /*valor do arredondamento da borda*/
+    border-radius: 5px;
+}
