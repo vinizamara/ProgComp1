@@ -47,3 +47,34 @@ nav a {
     /*valor do arredondamento da borda*/
     border-radius: 5px;
 }
+
+nav a:hover {
+    background: #003d82;
+}
+
+img {
+    width: 120px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+/*Referênciando uma classe com .*/
+.container {
+    width: 80%;
+    /*20px na vertical e automatico na horizontal*/
+    margin: 20px auto;
+    background: white;
+    /*Espaçamento interno nos 4 lados*/
+    padding: 20px;
+    border-radius: 20px;
+    align-items: center;
+    text-align: justify;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+h2{
+    text-align: center;
+}
