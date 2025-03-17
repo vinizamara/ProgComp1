@@ -78,3 +78,11 @@ img {
 h2{
     text-align: center;
 }
+
+td {
+    padding: 10px
+}
+
+table {
+    border-collapse: collapse;
+}
