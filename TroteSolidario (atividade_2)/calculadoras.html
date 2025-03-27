@@ -33,18 +33,31 @@
             </h2>
             <form><!-- Formulário para entrada de dados dousário -->
                 <div class="campos">
-                    <label> Ação Social: </label>
-                    <input type="number" id="acaoSocial">
+                    <label> Ação Social (pts): </label>
+                    <input type="number" id="acaoSocial"/>
                 </div>
                 <div class="campos">
-                    <label> Homenagem: </label>
-                    <input type="number" id="homenagem">
+                    <label> Homenagem (pts): </label>
+                    <input type="number" id="homenagem"/>
+                </div>
+                <div class="campos">
+                    <label> Caixasde Leite (litros): </label>
+                    <input type="number" id="leite"/>
+                </div>
+                <div class="campos">
+                    <label> Kit Alimentação (avulso) </label>
+                    <input type="number" id="kitAvulso"/>
+                </div>
+                <div class="campos">
+                    <label> Lata de Suplemento (avulso) </label>
+                    <input type="number" id="suplementoAvulso"/>
                 </div>
                 <div class="campos">
                     <button type="button" onclick="calcular()"> Calcular </button>
-                    <label id="resposta"> </label>
+                    <label id="soma"> </label>
                 </div>
             </form>
         </div>
+
     </body>
 </html>
