@@ -171,6 +171,16 @@ function calcular(){
     let oleo = document.getElementById("oleo").value
     soma += Number(oleo)
 
+    //Soma das atividades noturnas:
+    let mascote = document.getElementById("mascote").value
+    soma += Number(mascote)
+
+    let caracterizacaoAnimacao = document.getElementById("caracterizacaoAnimacao").value
+    soma += Number(caracterizacaoAnimacao)
+
+    let atividadesRecreativas = document.getElementById("atividadesRecreativas").value
+    soma += Number(atividadesRecreativas)
+
     //Vamos somar os valores, defininbdo eles como numbers
     //Multiplicação converte automaticamente um arquivo em number
     // Number(acaoSocial) + Number(homenagem) + (2 * Number(leite))
