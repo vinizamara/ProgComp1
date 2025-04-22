@@ -1,119 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #e9ecef;
     text-align: center;
+    color: #222;
 }
 
 header {
-    background-color: #28a745;
+    background-color: #218838;
     color: white;
-    /*Espaçamento interno 15px na horizontal, 0 na vertical*/
-    padding: 15px 0;
-    font-size: 24px;
-    border: 3px solid black;
+    padding: 20px 0;
+    font-size: 26px;
+    border-bottom: 4px solid #155724;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 nav {
-    background-color: #007bff;
-    padding: 10px;
-    /*Flex Boxing*/
+    background-color: #0056b3;
+    padding: 15px;
     display: flex;
-    /*Alinhamento horizontal*/
     justify-content: space-between;
-    /*Alinhamento vertical*/
     align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/*Referênciando um id com #*/
 #links-menu {
     display: flex;
-    gap: 20px;
+    gap: 15px;
 }
 
-/*Configura o estilo das âncoras que estão dentro do nav*/
 nav a {
-    /*texto branco*/
     color: white;
-    /*não faz decoração no link*/
     text-decoration: none;
-    /*10px vertical e 15px horizontal*/
-    padding: 10px 15px;
-    /*Tamanho da fonte*/
-    font-size: 18px;
-    /*cor de fundo*/
-    background-color: #005663;
-    /*valor do arredondamento da borda*/
-    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #003d82;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
 }
 
 nav a:hover {
-    background: #003d82;
+    background-color: #002855;
 }
 
 img {
-    width: 120px;
+    width: 7%;
     height: auto;
     margin-right: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
-/*Referênciando uma classe com .*/
 .container {
-    width: 80%;
-    /*20px na vertical e automatico na horizontal*/
-    margin: 20px auto;
+    width: 85%;
+    margin: 30px auto;
     background: white;
-    /*Espaçamento interno nos 4 lados*/
-    padding: 20px;
-    border-radius: 20px;
-    align-items: center;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     text-align: justify;
-    font-size: 20px;
-    letter-spacing: -0.5px;
-    line-height: 1.2;
+    font-size: 18px;
+    line-height: 1.6;
 }
 
-h2{
+h2, h3 {
     text-align: center;
-}
-
-/*Faz com que apenas os tds dentro do tr dentro do table sejam afetados*/
-table tr td {
-    padding: 10px
+    margin-bottom: 20px;
+    color: #111;
 }
 
 table {
+    width: 90%;
+    margin: 20px auto;
     border-collapse: collapse;
-    margin: 0 auto; /*Espaçamento externo de 0 acima e abaixo e automático esq. dir.*/
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.laranja {
-    background-color: orange;
+table th, table td {
+    border: 1px solid #aaa;
+    padding: 12px;
+    text-align: center;
 }
 
-.azul {
-    background-color: rgb(0, 174, 255);
+table th {
+    background-color: #ced4da;
+    font-weight: bold;
 }
 
-.preta {
-    background-color: black;
+table td {
+    background-color: #f8f9fa;
+}
+
+.laranja { 
+  background-color: #e69500; 
+}
+
+.azul { 
+  background-color: #1c77c3; color: white; 
+}
+
+.preta { 
+  background-color: #222; color: white; 
+}
+
+.roxa { 
+  background-color: #7e57c2; color: white; }
+
+  .verde { 
+  background-color: #388e3c; color: white; 
+}
+
+.vermelha { 
+  background-color: #c62828; color: white; 
+}
+
+.kit-box, .meta-box, .pontuacao-box, .containerAzul, .containerImportante {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 30px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.kit-box {
+    max-width: 800px;
+    border: 1px solid #9eb7d6;
+    background-color: #d6e4f0;
+}
+
+.meta-box {
+    max-width: 1000px;
+}
+
+.meta-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.meta-table th,
+.meta-table td {
+    padding: 10px;
+    border: 1px solid #bbb;
+}
+
+.meta-table td:nth-child(2) {
+    text-align: left;
+}
+
+.containerAzul {
+    background-color: #b7d0ea;
+    border: 2px solid #3a78a1;
+}
+
+.containerImportante {
+    background-color: #e6ddaa;
+    border: 2px solid #c2b76e;
+}
+
+.pontuacao-box h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.pontuacao-box ul {
+    list-style: disc;
+    padding-left: 25px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.nota {
+    font-size: 14px;
+    font-style: italic;
+    text-align: left;
+    margin-top: 10px;
+    color: #555;
+}
+
+tr.azul th,
+tr.azul td {
+    background-color: #1c77c3;
     color: white;
 }
 
-.roxa{
-    background-color: purple; 
-}
-
-.verde{
-    background-color: green;
-}
-
-.vermelha{
-    background-color: red;
-}
-
-.campos {
-    margin: 20px;
-}
