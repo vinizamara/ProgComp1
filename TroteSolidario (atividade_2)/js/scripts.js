@@ -39,6 +39,9 @@ function calcular(){
         else if (kit >= 19 && suplemento >= 10){
             pontosKitSupli = 1000 + ((kit - 19) * 30)  + ((suplemento - 10) * 15)
         }
+        else {
+            pontosKitSupli = (kit * 30) + (suplemento * 15)
+        }
     }
     else if(equipe == "preta"){
         // equipe é preta
@@ -53,6 +56,9 @@ function calcular(){
         }
         else if (kit >= 21 && suplemento >= 10){
             pontosKitSupli = 1000 + ((kit - 21) * 30) + ((suplemento - 10) * 15)
+        }
+        else {
+            pontosKitSupli = (kit * 30) + (suplemento * 15)
         }
     }
     else if(equipe == "roxa"){
@@ -69,6 +75,9 @@ function calcular(){
         else if (kit >= 20 && suplemento >= 10){
             pontosKitSupli = 1000 + ((kit - 20) * 30) + ((suplemento - 10) * 15)
         }
+        else {
+            pontosKitSupli = (kit * 30) + (suplemento * 15)
+        }
     }
     else if(equipe == "verde"){
         // equipe é verde
@@ -84,20 +93,26 @@ function calcular(){
         else if (kit >= 18 && suplemento >= 9){
             pontosKitSupli = 1000 + ((kit - 18) * 30) + ((suplemento - 9) * 15)
         }
+        else {
+            pontosKitSupli = (kit * 30) + (suplemento * 15)
+        }
     }
     else if(equipe == "vermelha"){
         // equipe é preta
         if (kit >= 93 && suplemento >= 47){
-            pontosKit = 5000 + ((kit - 93) * 30) + ((suplemento - 47) * 15)
+            pontosKitSupli = 5000 + ((kit - 93) * 30) + ((suplemento - 47) * 15)
         }
         else if (kit >= 74 && suplemento >= 38){
-            pontosKit = 4000 + ((kit - 74) * 30) + ((suplemento - 38) * 15)
+            pontosKitSupli = 4000 + ((kit - 74) * 30) + ((suplemento - 38) * 15)
         }
         else if (kit >= 47 && suplemento >= 24){
-            pontosKit = 2500 + ((kit - 47) * 30)  + ((suplemento - 24) * 15)
+            pontosKitSupli = 2500 + ((kit - 47) * 30)  + ((suplemento - 24) * 15)
         }
         else if (kit >= 19 && suplemento >= 9){
-            pontosKit = 1000 + ((kit - 19) * 30) + ((suplemento - 9) * 15)
+            pontosKitSupli = 1000 + ((kit - 19) * 30) + ((suplemento - 9) * 15)
+        }
+        else {
+            pontosKitSupli = (kit * 30) + (suplemento * 15)
         }
     }
     soma += pontosKitSupli
@@ -107,7 +122,7 @@ function calcular(){
     //Recupera a cor da equipe para cálculo da doação de sangue
     if (equipe == "laranja"){
         // equipe é laranja
-        if (doacaoSangue == 49){
+        if (doacaoSangue >= 49){
             pontosSangue = 2500 + ((doacaoSangue - 49) * 20)
         }
         else {
@@ -116,7 +131,7 @@ function calcular(){
     }
     else if(equipe == "preta"){
         // equipe é preta
-        if (doacaoSangue == 52){
+        if (doacaoSangue >= 52){
             pontosSangue = 2500 + ((doacaoSangue - 52) * 20)
         }
         else {
@@ -125,7 +140,7 @@ function calcular(){
     }
     else if(equipe == "roxa"){
         // equipe é roxa
-        if (doacaoSangue == 51){
+        if (doacaoSangue >= 51){
             pontosSangue = 2500 + ((doacaoSangue - 51) * 20)
         }
         else {
@@ -134,7 +149,7 @@ function calcular(){
     }
     else if(equipe == "verde"){
         // equipe é verde
-        if (doacaoSangue == 44){
+        if (doacaoSangue >= 44){
             pontosSangue = 2500 + ((doacaoSangue - 44) * 20)
         }
         else {
@@ -142,8 +157,8 @@ function calcular(){
         }
     }
     else if(equipe == "vermelha"){
-        // equipe é preta
-        if (doacaoSangue == 47){
+        // equipe é vermelha
+        if (doacaoSangue >= 47){
             pontosSangue = 2500 + ((doacaoSangue - 47) * 20)
         }
         else {
@@ -180,6 +195,9 @@ function calcular(){
 
     let atividadesRecreativas = document.getElementById("atividadesRecreativas").value
     soma += Number(atividadesRecreativas)
+
+    let registroVisual = document.getElementById("registroVisual").value
+    soma += Number(registroVisual)
 
     //Vamos somar os valores, defininbdo eles como numbers
     //Multiplicação converte automaticamente um arquivo em number
