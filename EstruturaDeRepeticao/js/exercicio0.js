@@ -1,22 +1,28 @@
 function exercicio0(){
-    /* Recolhimento de Nota */
-    
-    //Conta de 1 a 6
     let conta = 1
-    let nota
     let soma = 0
+    let satisfeito = 0
+    let insatisfeito = 0
 
-    //Exemplo de estrutura de repetição
-    while (conta <= 6){
-        nota = Number(prompt(`Informe a nota ${conta}`))
+    while(conta <= 10){
+        nota = Number(prompt(`Participante ${conta}, informe a nota de satisfação entre 0 a 10:`))
+        if (nota >= 8 && nota <= 10){
+            satisfeito ++
+        }
+        else if (nota < 5 && nota >= 0){
+            insatisfeito ++
+        }
+        else if (nota < 0 || nota > 10){
+            alert(`Nota inválida`)
+            continue // Volta para o início, sem incrementar conta
+        }
         soma = soma + nota
-        conta ++ // conta = conta + 1
+        conta ++
     }
 
-    // //Soma das notas
-    // let soma = nota1 + nota2 + nota3 + nota4 + nota5 + nota6
-    let media = soma / 6
+    let media = soma / 10
 
-    //Mostra o resultado
-    alert(`A média das notas inseridas é ${media.toFixed(1)}`)
+    alert(`A média das notas foi: ${media.toFixed(2)}`)
+    alert(`O número de pessoas satisfeitas foi: ${satisfeito}`)
+    alert(`O número de pessoas insatisfeitas foi: ${insatisfeito}`)
 }
