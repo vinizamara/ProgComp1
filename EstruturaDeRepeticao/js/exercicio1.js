@@ -1,3 +1,4 @@
+//Algoritmo de Ordenação
 function exercicio1(){
     let grupo = []
     let grupoCrescente = []
@@ -22,3 +23,26 @@ function exercicio1(){
         "Os números em ordem crescente ficam: " + grupoCrescente.join(', ') + "\n" +
         "Os números em ordem decrescente ficam: " + grupoDecrescente.join(', ')) // Alert só aceita um elemento
 }
+/*
+Outra forma de fazer o algoritmo de ordenação:
+    let conta = 1
+    let a = Number(prompt(`Informe o valor de A:`))
+    let b = Number(prompt(`Informe o valor de B:`))
+    let c = Number(prompt(`Informe o valor de C:`))
+    let d = Number(prompt(`Informe o valor de D:`))
+    while (conta <= 3){
+        if (a > b){
+            aux = a; a = b; b = aux;
+        }
+        if (b > c){
+            aux = b; b = c; c = aux;
+        }
+        if (c > d){
+            aux = c; c = d; d = aux;
+        }
+        conta ++
+    }
+    alert("Ordem crescente: "+ a + b + c + d)
+    alert("Ordem decrescente: "+ d + c + b + a)
+*/
+

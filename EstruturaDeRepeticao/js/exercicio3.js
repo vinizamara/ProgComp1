@@ -32,8 +32,6 @@ function exercicio3(){
         contagem++;
     }
 
-    let porcentagem1 = (faixaEtaria1 / 8) * 100
-
     alert("Aquntidade de pessoas em cada faixa etária foi: " + "\n" +
         "1°: " + faixaEtaria1 + "\n" +
         "2°: " + faixaEtaria2 + "\n" +
