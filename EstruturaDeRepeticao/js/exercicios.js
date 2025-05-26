@@ -248,7 +248,22 @@ function exercicio6(){
 
     /*
     Usando for:
+        for (let contagem = 1; contagem <= 2; contagem++) {
+            let valorTransacao = Number(prompt(`Qual o valor da transação ${contagem}? `));
+            valorTotal += valorTransacao;
+            
+            let codigoTransacao = prompt(`Qual o código (P ou V) da transação ${contagem}? `);
 
+            if (codigoTransacao === "P" || codigoTransacao === "p") {
+                transacaoPrazo += valorTransacao;
+            } else if (codigoTransacao === "V" || codigoTransacao === "v") {
+                transacaoVista += valorTransacao;
+            } else {
+                alert("Valor inválido");
+                contagem--; // desfaz a iteração inválida
+                continue;
+            }
+        }
     */
 }
 
