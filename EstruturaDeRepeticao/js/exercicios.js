@@ -219,20 +219,20 @@ function exercicio6(){
     let transacaoVista = 0
     let contagem = 1
 
-    while (contagem <= 2){
+    while (contagem <= 15){
         let valorTransacao = Number(prompt(`Qual o valor da transação ${contagem}? `))
         valorTotal = valorTotal + valorTransacao
-        let codigoTransacao = prompt(`Qual o código (P ou V) da transação ${contagem}? `)
+        let codigoTransacao = prompt(`Qual o código (P ou V) da transação ${contagem}? `).toUpperCase
 
-        if (codigoTransacao == "P" || codigoTransacao == "p"){
+        if (codigoTransacao == "P" /*|| codigoTransacao == "p"*/){
             transacaoPrazo = transacaoPrazo + valorTransacao
         }
 
-        else if (codigoTransacao == "V" || codigoTransacao == "v"){
+        else if (codigoTransacao == "V" /*|| codigoTransacao == "v"*/){
             transacaoVista = transacaoVista + valorTransacao
         }
 
-        else if (codigoTransacao != "V" || codigoTransacao != "P"|| codigoTransacao != "v" || codigoTransacao != "p") {
+        else if (codigoTransacao != "V" || codigoTransacao != "P" /*|| codigoTransacao != "v" || codigoTransacao != "p"*/) {
             alert("Valor inválido")
             continue
         }
@@ -248,7 +248,7 @@ function exercicio6(){
 
     /*
     Usando for:
-        for (let contagem = 1; contagem <= 2; contagem++) {
+        for (let contagem = 1; contagem <= 15; contagem++) {
             let valorTransacao = Number(prompt(`Qual o valor da transação ${contagem}? `));
             valorTotal += valorTransacao;
             
@@ -264,6 +264,43 @@ function exercicio6(){
                 continue;
             }
         }
+    Foi comentado na aula sobre utilizar o do{}while() - Faz pelo menos uma vez a repetição
     */
+}
+
+function exercicio7(){
+    let idade, altura, peso, quantidadeIdadeSuperior = 0, totalAltura = 0, quantidadeAltura = 0, quantidadePeso = 0
+
+    for(i = 1; i <= 5; i++){
+        do{
+            idade = Number(prompt(`Quantos anos você tem, pessoa ${i}?`))
+        } while(idade <= 0)
+        if (idade > 50){
+            quantidadeIdadeSuperior++
+        }
+
+        do{
+            altura = Number(prompt(`Quantos metros você tem, pessoa ${i}?`))
+        } while(altura <= 0)
+        if (idade >= 10 && idade <= 20){
+            totalAltura += altura
+            quantidadeAltura++
+        }
+
+        do{
+            peso = Number(prompt(`Quantos kilos você pesa, pessoa ${i}?`))
+        } while(peso <= 0)
+        if (peso < 40){
+            quantidadePeso++
+        }
+    }
+
+    let mediaAltura = totalAltura/quantidadeAltura
+
+    alert(`
+    A quantidade de pessoas com idade superior a 50 anos é: ${quantidadeIdadeSuperior} \n
+    Média de altura de pessoas entre 10 e 20 anos: ${mediaAltura.toFixed(2)} \n
+    Porcentagem de pessoas com peso menor que 40kg: ${(quantidadeAltura/5)*100}%
+    `)
 }
 
