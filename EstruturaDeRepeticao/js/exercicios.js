@@ -304,3 +304,54 @@ function exercicio7(){
     `)
 }
 
+function exercicio8(){
+    let idade, altura, peso, corOlho, corCabelo, quantidadePeso = 0, idadeQuantidade = 0, idadeTotal = 0, olhoAzul = 0, ruivoSemOlhoAzul = 0
+
+    for(i = 1; i <= 2; i++){
+        do{
+            idade = Number(prompt(`Quantos anos você tem, pessoa ${i}?`))
+        } while(idade <= 0)
+
+        do{
+            altura = Number(prompt(`Quantos metros você tem, pessoa ${i}?`))
+        } while(altura <= 0)
+        if (altura < 1.50){
+            idadeQuantidade++
+            idadeTotal += idade
+        }
+
+        do{
+            peso = Number(prompt(`Quantos kilos você pesa, pessoa ${i}?`))
+        } while(peso <= 0)
+        if (altura > 50 && peso < 60){
+            quantidadePeso++
+        }
+
+        do{
+            corOlho = String(prompt(`Qual a cor dos seus olhos, pessoa ${i}?`)).toUpperCase
+        } while(corOlho != "A" && corOlho != "P" && corOlho != "V" && corOlho != "C")
+        if (corOlho == "A"){
+            olhoAzul++
+        }
+
+        do{
+            corCabelo = String(prompt(`Qual a cor do seu cabelo, pessoa ${i}?`)).toUpperCase
+        } while(corCabelo != "P" && corCabelo != "C" && corCabelo != "L" && corCabelo != "R")
+        if(corCabelo == "R" && corOlho != "A"){
+            ruivoSemOlhoAzul++
+        }
+    }
+
+    let idadeMedia = idadeTotal/idadeQuantidade
+    if (olhoAzul != 0){
+        let olhoAzulPorcentagem = (olhoAzul/6) * 100
+    }
+
+    alert(`
+    A quantidade de pessoas com idade superiror a 50 anos e peso inferior a 60kg é: ${quantidadePeso} pessoas \n
+    A média de idade de pessoas com altura inferior a 1,50 m é: ${idadeMedia} anos \n
+    A porcentagem de pessoas que possuem olhos azuis é: ${olhoAzulPorcentagem} % \n
+    A quantidade de pessoas ruivas que não possuem olhos azuis é: ${ruivoSemOlhoAzul} pessoas
+    `)
+}
+
