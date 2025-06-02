@@ -305,9 +305,11 @@ function exercicio7(){
 }
 
 function exercicio8(){
-    let idade, altura, peso, corOlho, corCabelo, quantidadePeso = 0, idadeQuantidade = 0, idadeTotal = 0, olhoAzul = 0, ruivoSemOlhoAzul = 0
+    let idade, altura, peso, corOlho, corCabelo, 
+    quantidadePeso = 0, idadeQuantidade = 0, idadeTotal = 0, olhoAzul = 0, ruivoSemOlhoAzul = 0, 
+    olhoAzulPorcentagem = 0, idadeMedia = 0
 
-    for(i = 1; i <= 2; i++){
+    for(i = 1; i <= 6; i++){
         do{
             idade = Number(prompt(`Quantos anos você tem, pessoa ${i}?`))
         } while(idade <= 0)
@@ -323,28 +325,30 @@ function exercicio8(){
         do{
             peso = Number(prompt(`Quantos kilos você pesa, pessoa ${i}?`))
         } while(peso <= 0)
-        if (altura > 50 && peso < 60){
+        if (altura > 1.50 && peso < 60){
             quantidadePeso++
         }
 
         do{
-            corOlho = String(prompt(`Qual a cor dos seus olhos, pessoa ${i}?`)).toUpperCase
+            corOlho = String(prompt(`Qual a cor dos seus olhos, pessoa ${i}?`)).toUpperCase()
         } while(corOlho != "A" && corOlho != "P" && corOlho != "V" && corOlho != "C")
         if (corOlho == "A"){
             olhoAzul++
         }
 
         do{
-            corCabelo = String(prompt(`Qual a cor do seu cabelo, pessoa ${i}?`)).toUpperCase
+            corCabelo = String(prompt(`Qual a cor do seu cabelo, pessoa ${i}?`)).toUpperCase()
         } while(corCabelo != "P" && corCabelo != "C" && corCabelo != "L" && corCabelo != "R")
         if(corCabelo == "R" && corOlho != "A"){
             ruivoSemOlhoAzul++
         }
     }
 
-    let idadeMedia = idadeTotal/idadeQuantidade
-    if (olhoAzul != 0){
-        let olhoAzulPorcentagem = (olhoAzul/6) * 100
+    if (idadeQuantidade > 0) {
+        idadeMedia = idadeTotal / idadeQuantidade
+    }
+    if (olhoAzul > 0){
+        olhoAzulPorcentagem = ((olhoAzul/6) * 100).toFixed(2)
     }
 
     alert(`
@@ -355,3 +359,68 @@ function exercicio8(){
     `)
 }
 
+function exercicio9(){
+    let idade, altura, peso, somaIdade = 0, quantidadePesoAltura = 0, quantidadeAltura190 = 0, 
+    quantidadeIdadeAltura190 = 0, porcentagemAltura190 = 0
+
+    for(i = 1; i <= 10; i++){
+        do{
+            idade = Number(prompt(`Quantos anos você tem, pessoa ${i}?`))
+        } while(idade <= 0)
+        somaIdade += idade
+
+        do{
+            altura = Number(prompt(`Quantos metros você tem, pessoa ${i}?`))
+        } while(altura <= 0)
+
+        do{
+            peso = Number(prompt(`Quantos kilos você pesa, pessoa ${i}?`))
+        } while(peso <= 0)
+        
+        if (peso > 90 && altura < 1.50){
+            quantidadePesoAltura++
+        }
+        if(altura > 1.90){
+            quantidadeAltura190++
+            if(idade >= 10 && idade <= 30){
+                quantidadeIdadeAltura190++
+            }
+        }
+    }
+
+    if (quantidadeIdadeAltura190 > 0 && quantidadeAltura190 > 0){
+        porcentagemAltura190 = quantidadeIdadeAltura190/quantidadeAltura190 * 100
+    }
+
+    alert(`
+        A média da idade das 10 pessoas é: ${(somaIdade/10)} anos \n
+        A quantidade de pessoas com mais de 90kg e menos de 1.50 metros de altura é: ${quantidadePesoAltura} \n
+        A porcentagem de pessoas entre 10 e 30 anos que estão entre as pessoas com 1.90 metros de altura é: 
+        ${porcentagemAltura190.toFixed(2)}%
+    `)
+}
+
+function exercicio10(){
+    let somaPar = 0, somaPrimos = 0, numero, aux, divisivel = 0
+
+    for(i = 0; i < 10; i++){
+        do{
+        numero = Number(prompt('Forneça o valor do número:'))
+        }while(numero < 1)
+        if(numero % 2 == 0){
+            somaPar += numero
+        }
+        for(aux = numero - 1; aux > 1; aux--){
+            if(numero % aux == 0){
+                divisivel++
+            }
+        }
+        if (divisivel == 0){
+            somaPrimos += numero
+        }
+        divisivel = 0
+    }
+
+    alert(`Soma dos números pares digitados: ${somaPar} \n
+        Soma dos números primos digitados: ${somaPrimos}`)
+}
